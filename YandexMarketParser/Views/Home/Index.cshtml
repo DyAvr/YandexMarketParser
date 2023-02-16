@@ -1,0 +1,23 @@
+﻿@model YandexMarketParser.Models.Offer
+
+@{
+    ViewData["Title"] = "Offer";
+}
+
+<div class="container">
+    <h1>Offer</h1>
+
+    @if(Model != null) {
+        <div class="card" style="width: 18rem;">
+            <img src=@Model.Picture class="card-img-top" alt="picture">
+            <div class="card-body">
+                <h5 class="card-title"><a href=@Model.Url>@Model.Description</a></h5>
+                <p class="card-text">ID: @Model.Id</p>
+                <p class="card-text">Price: @Model.Price @Model.CurrencyId</p>
+            </div>
+        </div>
+    }
+    else {
+        <p>No offer found.</p>
+    }
+</div>
